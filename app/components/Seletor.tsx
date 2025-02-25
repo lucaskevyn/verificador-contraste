@@ -10,7 +10,7 @@ export default function Seletor({ titulo, nome, cor, lum, onChange }: SeletorPro
   return (
     <div className="flex flex-col gap-2">
       <span className="font-bold">{titulo}</span>
-      <div className='group flex w-64 h-11 border border-gray-300 rounded-lg focus-within:border-lime-600 hover:border-lime-600'>
+      <div className='group flex h-11 border border-gray-300 rounded-lg focus-within:border-lime-600 hover:border-lime-600'>
         <input type='text' name={nome} className='h-full w-full pl-3 rounded-l-lg focus:outline-none' onChange={onChange} value={cor} />
         <input type='color' name={nome} className='h-full w-12 cursor-pointer border-l-2 rounded-r-lg' onChange={onChange} value={cor} />
       </div>

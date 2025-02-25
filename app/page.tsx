@@ -49,9 +49,11 @@ export default function Home() {
       <div className="flex flex-col w-3/5 gap-6 font-bold">
         <h1 className="w-full text-6xl flex flex-col text-azulTexto">VERIFICADOR<br /> <span className="text-5xl font-normal tracking-tight text-azulClaroTexto">DE CONTRASTE</span></h1>
         <div className="flex rounded-2xl border">
-          <div className="flex flex-col w-1/2 p-6 gap-4">
-            <Seletor titulo='Cor do Texto' nome='texto' cor={cores.texto} lum={lumTexto} onChange={mudarCor} />
-            <Seletor titulo='Cor do Fundo' nome='fundo' cor={cores.fundo} lum={lumFundo} onChange={mudarCor} />
+          <div className="flex flex-col w-1/2 p-6 gap-8">
+            <div className="flex gap-4">
+              <Seletor titulo='Cor do Texto' nome='texto' cor={cores.texto} lum={lumTexto} onChange={mudarCor} />
+              <Seletor titulo='Cor do Fundo' nome='fundo' cor={cores.fundo} lum={lumFundo} onChange={mudarCor} />
+            </div>
             <div className="flex flex-col gap-2">
               <span className="">Contraste</span>
               <div className="flex flex-col h-64 gap-1  text-lg">
