@@ -2,10 +2,11 @@ interface SeletorProps {
   titulo: string
   nome: string
   cor: string
+  lum: number
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function Seletor({ titulo, nome, cor, onChange }: SeletorProps) {
+export default function Seletor({ titulo, nome, cor, lum, onChange }: SeletorProps) {
   return (
     <div className="">
       {titulo}
@@ -13,6 +14,10 @@ export default function Seletor({ titulo, nome, cor, onChange }: SeletorProps) {
         <input type='text' name={nome} className='h-full w-full pl-3 rounded-lg focus:outline-none' onChange={onChange} value={cor} />
         <input type='color' name={nome} className='h-full w-12 cursor-pointer border-l-2 rounded-r-lg' onChange={onChange} value={cor} />
       </div>
+      <div>Luminância: {Intl.NumberFormat('pt-BR', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 4
+      }).format(lum)}</div>
     </div>
   );
 }
