@@ -1,11 +1,12 @@
 'use client'
 import Seletor from "./components/Seletor";
 import { useState } from "react";
+import { Star } from 'lucide-react';
 
 export default function Home() {
   const [cores, setCores] = useState({
     texto: '#ffffff',
-    fundo: '#000000'
+    fundo: '#6b7280'
   })
 
   const rgbTexto = hexParaRgb(cores.texto)
@@ -40,17 +41,54 @@ export default function Home() {
       v /= 255
       return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
     })
-    console.log(`teste:${a}`)
     return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722
   }
 
   return (
-    <main className='w-full justify-items-center'>
-      <div className='size-10' style={{ backgroundColor: cores.texto }}></div>
-      <div className='size-10' style={{ backgroundColor: cores.fundo }}></div>
-      <Seletor titulo='Cor do Texto' nome='texto' cor={cores.texto} lum={lumTexto} onChange={mudarCor} />
-      <Seletor titulo='Cor do Fundo' nome='fundo' cor={cores.fundo} lum={lumFundo} onChange={mudarCor} />
-      <div>Contraste: {contraste}</div>
+    <main className='w-full h-screen justify-center items-center flex flex-col'>
+      <div className="flex flex-col w-3/5 gap-6 font-bold">
+        <h1 className="w-full text-6xl flex flex-col text-azulTexto">VERIFICADOR<br /> <span className="text-5xl font-normal tracking-tight text-azulClaroTexto">DE CONTRASTE</span></h1>
+        <div className="flex rounded-2xl border">
+          <div className="flex flex-col w-1/2 p-6 gap-4">
+            <Seletor titulo='Cor do Texto' nome='texto' cor={cores.texto} lum={lumTexto} onChange={mudarCor} />
+            <Seletor titulo='Cor do Fundo' nome='fundo' cor={cores.fundo} lum={lumFundo} onChange={mudarCor} />
+            <div className="flex flex-col gap-2">
+              <span className="">Contraste</span>
+              <div className="flex flex-col h-64 gap-1  text-lg">
+                <div className="flex h-3/5 bg-vermelho rounded-t-2xl p-8 justify-between items-center text-vermelhoTexto">
+                  <span className="text-6xl"> {Math.round(contraste * 100) / 100} </span>
+                  <div className="flex flex-col items-center gap-1">
+                    <span>Bom</span>
+                    <div className="flex gap-1">
+                      <Star className="fill-vermelhoTexto"></Star>
+                      <Star className="fill-vermelhoTexto"></Star>
+                      <Star className="fill-vermelhoTexto"></Star>
+                    </div>
+
+                  </div>
+                </div>
+                <div className="flex h-2/5 gap-1">
+                  <div className="flex w-1/2 bg-amarelo rounded-bl-2xl p-8 justify-between items-center text-amareloTexto">
+                    Texto Pequeno
+                    <span>AA</span>
+                  </div>
+                  <div className="flex w-1/2 bg-verde rounded-br-2xl p-8 justify-between items-center text-verdeTexto">
+                    Texto Grande
+                    <span>AA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={`flex flex-col justify-center w-1/2 rounded-r-2xl p-12 gap-2`} style={{ backgroundColor: cores.fundo, color: cores.texto }}>
+            <h2 className=" text-2xl">Exemplo</h2>
+            <p className="text-lg font-normal">As you type, the contrast ratio indicated will update. Hover over the circle to get more detailed information. When semi-transparent colors are involved as backgrounds, the contrast ratio will have an error margin, to account for the different colors they may be over.</p>
+          </div>
+
+        </div>
+      </div>
+
+
     </main>
   );
 }

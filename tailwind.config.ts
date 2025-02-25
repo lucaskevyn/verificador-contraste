@@ -11,7 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        amarelo: "#F7D060",
+        vermelho: "#FF6D60",
+        verde: "#98D8AA",
+        amareloTexto: "#745807",
+        vermelhoTexto: "#6b0e05",
+        verdeTexto: "#0b6025",
+        azulTexto: "#31405e",
+        azulClaroTexto: "#6b7280"
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"]
+      }
     },
   },
   plugins: [],
