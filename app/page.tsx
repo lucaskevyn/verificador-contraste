@@ -150,17 +150,40 @@ export default function Home() {
             </div>
           </div>
           <div
-            className={`flex flex-col justify-center w-1/2 rounded-r-2xl p-12 gap-2`}
+            className={`flex flex-col justify-center w-1/2 rounded-r-2xl p-12 gap-3`}
             style={{ backgroundColor: cores.fundo, color: cores.texto }}
           >
-            <h2 className=" text-2xl">Exemplo</h2>
-            <p className="text-lg font-normal">
-              As you type, the contrast ratio indicated will update. Hover over
-              the circle to get more detailed information. When semi-transparent
-              colors are involved as backgrounds, the contrast ratio will have
-              an error margin, to account for the different colors they may be
-              over.
-            </p>
+            <h2 className="text-3xl">Como funciona?</h2>
+            <div className="flex flex-col text-lg font-light gap-3">
+              <p>
+                O Verificador de Contraste calcula a relação de contraste entre
+                a cor do texto e a cor de fundo, indicando o nível de
+                acessibilidade conforme as{" "}
+                <a
+                  href="https://www.w3.org/TR/WCAG21/#contrast-minimum"
+                  className="hover:underline"
+                >
+                  diretrizes <i>WCAG 2.2</i>
+                </a>
+                .
+              </p>
+              <p>
+                Texto pequeno {"->"} abaixo de 18pt
+                <br />
+                Texto grande {"->"} 18pt normal ou 14pt em{" "}
+                <span className="font-bold">negrito</span>
+              </p>
+              <p>
+                Desenvolvido por{" "}
+                <a
+                  href="https://github.com/lucaskevyn"
+                  className="font-bold hover:underline"
+                >
+                  Lucas Fernandes
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </div>
