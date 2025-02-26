@@ -161,7 +161,7 @@ export default function Home() {
                 acessibilidade conforme as{" "}
                 <a
                   href="https://www.w3.org/TR/WCAG21/#contrast-minimum"
-                  className="hover:underline"
+                  className="underline-offset-4 hover:underline"
                 >
                   diretrizes <i>WCAG 2.2</i>
                 </a>
@@ -177,7 +177,7 @@ export default function Home() {
                 Desenvolvido por{" "}
                 <a
                   href="https://github.com/lucaskevyn"
-                  className="font-bold hover:underline"
+                  className="font-bold underline-offset-4 hover:underline"
                 >
                   Lucas Fernandes
                 </a>

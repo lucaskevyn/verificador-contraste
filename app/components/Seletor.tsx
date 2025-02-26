@@ -16,7 +16,7 @@ export default function Seletor({
   return (
     <div className="flex flex-col gap-2">
       <span className="font-bold">{titulo}</span>
-      <div className="group flex h-11 border border-gray-300 rounded-lg focus-within:border-azulTexto hover:border-azulClaroTexto">
+      <div className="group flex h-11 border border-gray-300 rounded-lg focus-within:border-azulTexto hover:border-azulClaroTexto transition-colors duration-300">
         <input
           type="text"
           name={nome}
