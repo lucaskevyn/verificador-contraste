@@ -17,7 +17,7 @@ export default {
         amareloTexto: "#745807",
         vermelhoTexto: "#6b0e05",
         verdeTexto: "#0b6025",
-        azulTexto: "#31405e",
+        azulTexto: "#375081",
         azulClaroTexto: "#6b7280"
       },
       fontFamily: {

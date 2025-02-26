@@ -6,7 +6,7 @@ import { Star } from 'lucide-react';
 export default function Home() {
   const [cores, setCores] = useState({
     texto: '#ffffff',
-    fundo: '#6b7280'
+    fundo: '#375081'
   })
 
   const rgbTexto = hexParaRgb(cores.texto)
@@ -18,6 +18,11 @@ export default function Home() {
   const contraste = lumTexto > lumFundo
     ? ((lumTexto + 0.05) / (lumFundo + 0.05))
     : ((lumFundo + 0.05) / (lumTexto + 0.05))
+
+  const nivel = contraste > 7 ? 3
+    : contraste > 4.5 ? 2
+      : contraste > 3 ? 1
+        : 0
 
   function mudarCor(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target
@@ -57,26 +62,25 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <span className="">Contraste</span>
               <div className="flex flex-col h-64 gap-1  text-lg">
-                <div className="flex h-3/5 bg-vermelho rounded-t-2xl p-8 justify-between items-center text-vermelhoTexto">
+                <div className={`flex h-3/5 rounded-t-2xl p-8 justify-between items-center ${nivel === 3 ? "bg-verde text-verdeTexto" : nivel === 2 ? "bg-amarelo text-amareloTexto" : "bg-vermelho text-vermelhoTexto"}`}>
                   <span className="text-6xl"> {Math.round(contraste * 100) / 100} </span>
                   <div className="flex flex-col items-center gap-1">
-                    <span>Bom</span>
+                    <span>{nivel === 3 ? "Ótimo" : nivel === 2 ? "Bom" : nivel === 1 ? "Ruim" : "Muito Ruim"}</span>
                     <div className="flex gap-1">
-                      <Star className="fill-vermelhoTexto"></Star>
-                      <Star className="fill-vermelhoTexto"></Star>
-                      <Star className="fill-vermelhoTexto"></Star>
+                      <Star className={nivel > 0 ? "fill-current" : undefined}></Star>
+                      <Star className={nivel > 1 ? "fill-current" : undefined}></Star>
+                      <Star className={nivel > 2 ? "fill-current" : undefined}></Star>
                     </div>
-
                   </div>
                 </div>
                 <div className="flex h-2/5 gap-1">
-                  <div className="flex w-1/2 bg-amarelo rounded-bl-2xl p-8 justify-between items-center text-amareloTexto">
+                  <div className={`flex w-1/2 rounded-bl-2xl p-8 justify-between items-center ${nivel === 3 ? "bg-verde text-verdeTexto" : nivel === 2 ? "bg-amarelo text-amareloTexto" : "bg-vermelho text-vermelhoTexto"}`}>
                     Texto Pequeno
-                    <span>AA</span>
+                    <span className="">{nivel == 3 ? "AAA" : nivel === 2 ? "AA" : ""}</span>
                   </div>
-                  <div className="flex w-1/2 bg-verde rounded-br-2xl p-8 justify-between items-center text-verdeTexto">
+                  <div className={`flex w-1/2 rounded-br-2xl p-8 justify-between items-center ${nivel > 1 ? "bg-verde text-verdeTexto" : nivel === 1 ? "bg-amarelo text-amareloTexto" : "bg-vermelho text-vermelhoTexto"}`}>
                     Texto Grande
-                    <span>AA</span>
+                    <span>{nivel > 1 ? "AAA" : nivel === 1 ? "AA" : ""}</span>
                   </div>
                 </div>
               </div>
@@ -86,11 +90,8 @@ export default function Home() {
             <h2 className=" text-2xl">Exemplo</h2>
             <p className="text-lg font-normal">As you type, the contrast ratio indicated will update. Hover over the circle to get more detailed information. When semi-transparent colors are involved as backgrounds, the contrast ratio will have an error margin, to account for the different colors they may be over.</p>
           </div>
-
         </div>
       </div>
-
-
     </main>
   );
 }
