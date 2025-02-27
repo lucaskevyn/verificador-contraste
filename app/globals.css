@@ -21,11 +21,6 @@ body {
   @apply font-inter;
 }
 
-/* input[type="color"] {
-  appearance: none;
-  border: none;
-} */
-
 input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
