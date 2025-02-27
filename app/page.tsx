@@ -52,17 +52,17 @@ export default function Home() {
   }
 
   return (
-    <main className="w-full h-screen justify-center items-center flex flex-col">
-      <div className="flex flex-col w-3/5 gap-6 font-bold">
-        <h1 className="w-full text-6xl flex flex-col text-azulTexto">
+    <main className="w-full md:h-screen md:justify-center items-center flex flex-col">
+      <div className="flex flex-col gap-2 md:gap-6 font-bold md:p-12 xl:p-32 2xl:px-60">
+        <h1 className="w-full text-5xl md:text-6xl flex flex-col text-azulTexto pt-8 pl-6 md:p-0">
           VERIFICADOR
           <br />{" "}
-          <span className="text-5xl font-normal tracking-tight text-azulClaroTexto">
+          <span className="text-4xl md:text-5xl font-normal tracking-tight text-azulClaroTexto">
             DE CONTRASTE
           </span>
         </h1>
-        <div className="flex rounded-2xl border">
-          <div className="flex flex-col w-1/2 p-6 gap-8">
+        <div className="flex flex-col md:flex-row md:rounded-2xl md:border">
+          <div className="flex flex-col md:w-1/2 p-6 gap-8">
             <div className="flex gap-4">
               <Seletor
                 titulo="Cor do Texto"
@@ -81,9 +81,9 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="">Contraste</span>
-              <div className="flex flex-col h-64 gap-1  text-lg">
+              <div className="flex flex-col h-64 gap-1 text-lg">
                 <div
-                  className={`flex h-3/5 rounded-t-2xl p-8 justify-between items-center ${
+                  className={`flex h-3/5 rounded-t-2xl p-4 lg:p-8 justify-between items-center ${
                     nivel === 3
                       ? "bg-verde text-verdeTexto"
                       : nivel === 2
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
                 <div className="flex h-2/5 gap-1">
                   <div
-                    className={`flex w-1/2 rounded-bl-2xl p-8 justify-between items-center ${
+                    className={`flex w-1/2 rounded-bl-2xl p-6 lg:p-8 justify-between items-center ${
                       nivel === 3
                         ? "bg-verde text-verdeTexto"
                         : nivel === 2
@@ -134,7 +134,7 @@ export default function Home() {
                     </span>
                   </div>
                   <div
-                    className={`flex w-1/2 rounded-br-2xl p-8 justify-between items-center ${
+                    className={`flex w-1/2 rounded-br-2xl p-6 lg:p-8 justify-between items-center ${
                       nivel > 1
                         ? "bg-verde text-verdeTexto"
                         : nivel === 1
@@ -150,7 +150,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className={`flex flex-col justify-center w-1/2 rounded-r-2xl p-12 gap-3`}
+            className={`flex flex-col justify-center md:w-1/2 md:rounded-r-2xl p-8 lg:p-12 gap-3`}
             style={{ backgroundColor: cores.fundo, color: cores.texto }}
           >
             <h2 className="text-3xl">Como funciona?</h2>
