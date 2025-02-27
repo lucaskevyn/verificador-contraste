@@ -80,7 +80,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <span className="">Contraste</span>
+              <span>Contraste</span>
               <div className="flex flex-col h-64 gap-1 text-lg">
                 <div
                   className={`flex h-3/5 rounded-t-2xl p-4 lg:p-8 justify-between items-center ${
@@ -170,8 +170,9 @@ export default function Home() {
               <p>
                 Texto pequeno {"->"} abaixo de 18pt
                 <br />
-                Texto grande {"->"} 18pt normal ou 14pt em{" "}
-                <span className="font-bold">negrito</span>
+                Texto grande {"->"}{" "}
+                <span className="text-2xl">18pt normal</span> ou {""}
+                <span className="font-bold">14pt em negrito</span>
               </p>
               <p>
                 Desenvolvido por{" "}
