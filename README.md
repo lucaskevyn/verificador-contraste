@@ -29,12 +29,9 @@ Este projeto é uma ferramenta para verificar o contraste entre cores, garantind
 
 - Insira as cores de fundo e do texto para verificar o contraste.
 - O resultado indicará se a combinação atende às normas de acessibilidade.
+  
+![app](https://github.com/user-attachments/assets/6d495aff-24ad-4534-9699-a074cda9a2ce)
 
 ## 🌐 Acesso Online
 
 A aplicação está disponível em: [Verificador de Contraste](https://verificador-contraste.vercel.app/)
-
-## 📜 Licença
-
-Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para mais detalhes.
-
